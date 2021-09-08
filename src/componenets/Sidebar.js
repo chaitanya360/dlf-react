@@ -56,22 +56,25 @@ const sidebarStyle = {
 
 function Sidebar({ list, selectedItemId, setSelectedItemId, open, setOpen }) {
   const ListItem = ({ selected, text, id }) => (
-    <li id={id} style={{ backgroundColor: selected ? "purple" : "inherit" }}>
+    <li
+      onClick={() => {
+        setSelectedItemId(id);
+        setOpen(false);
+      }}
+      id={id}
+      style={{ backgroundColor: selected ? "var(--secondary)" : "inherit" }}
+    >
       {text}
     </li>
   );
 
   const Menu = (
-    <MenuStyle
-      onClick={(e) => {
-        setSelectedItemId(e.target.id);
-        setOpen(false);
-      }}
-    >
+    <MenuStyle>
       {list.map((item) => (
         <ListItem
           text={item.text}
           id={item.id}
+          key={item.id}
           selected={item.id === selectedItemId}
         />
       ))}
@@ -84,7 +87,9 @@ function Sidebar({ list, selectedItemId, setSelectedItemId, open, setOpen }) {
       open={open}
       onSetOpen={setOpen}
       styles={sidebarStyle}
-    />
+    >
+      sidebar
+    </SideBar>
   );
 }
 

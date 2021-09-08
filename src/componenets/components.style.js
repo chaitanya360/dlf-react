@@ -18,35 +18,72 @@ export const MenuStyle = styled.div`
   }
 
   li:hover {
-    border: 2px solid purple;
+    background-color: rgba(102, 51, 153, 0.6) !important;
   }
 `;
 
 export const MainAreaStyle = styled.div`
   position: absolute;
+  color: black;
+  background-color: #2f2f3f;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: lightgray;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+`;
 
-  h3 {
-    width: 100%;
-    text-align: center;
+export const SelectPlanButtonStyle = styled.div`
+  width: fit-content;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  padding: 0rem 0.5rem;
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: linear 200ms opacity;
+  z-index: 1;
+  color: white;
+  margin: 5px;
+`;
+
+export const ButtonsStyle = styled.div`
+  display: flex;
+  max-width: 400px;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 1rem auto;
+
+  button {
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+    padding: 5px 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
-  .select-plan-btn {
-    width: fit-content;
-    font-size: 1.2rem;
-    border-radius: 4px;
-    padding: 0.3rem 1rem;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: var(--primary);
-    cursor: pointer;
-    transition: linear 200ms opacity;
+  .btn-selected {
+    background-color: var(--secondary);
     color: white;
-    z-index: 1;
+  }
+`;
+
+export const ContentStyle = styled.div`
+  color: black;
+`;
+
+export const HeaderStyle = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: var(--secondary);
+
+  .title {
+    /* color: var(--secondary); */
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
   }
 `;
