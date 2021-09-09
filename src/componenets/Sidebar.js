@@ -12,7 +12,7 @@ const sidebarStyle = {
     overflow: "hidden",
   },
   sidebar: {
-    zIndex: 2,
+    zIndex: 3,
     position: "absolute",
     top: 0,
     bottom: 0,
@@ -62,7 +62,10 @@ function Sidebar({ list, selectedItemId, setSelectedItemId, open, setOpen }) {
         setOpen(false);
       }}
       id={id}
-      style={{ backgroundColor: selected ? "var(--secondary)" : "inherit" }}
+      style={{
+        backgroundColor: selected ? "var(--secondary)" : "inherit",
+        color: selected ? "black" : "white",
+      }}
     >
       {text}
     </li>
@@ -70,14 +73,19 @@ function Sidebar({ list, selectedItemId, setSelectedItemId, open, setOpen }) {
 
   const Menu = (
     <MenuStyle>
-      {list.map((item) => (
-        <ListItem
-          text={item.text}
-          id={item.id}
-          key={item.id}
-          selected={item.id === selectedItemId}
-        />
-      ))}
+      <>
+        <span className="close-btn" onClick={() => setOpen(false)}>
+          X
+        </span>
+        {list.map((item) => (
+          <ListItem
+            text={item.text}
+            id={item.id}
+            key={item.id}
+            selected={item.id === selectedItemId}
+          />
+        ))}
+      </>
     </MenuStyle>
   );
 

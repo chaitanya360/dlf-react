@@ -6,6 +6,24 @@ export const MenuStyle = styled.div`
   list-style: none;
   width: 100%;
   color: rgba(255, 255, 255, 0.9);
+  padding-top: 1rem;
+
+  .close-btn {
+    color: var(--gold);
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transform: scaleY(0.8);
+    transition: linear 200ms transform;
+    padding: 1rem;
+  }
+
+  .close-btn:hover {
+    transform: rotate(180deg) scaleY(0.8);
+  }
 
   li {
     font-size: 1.3rem;
@@ -18,14 +36,14 @@ export const MenuStyle = styled.div`
   }
 
   li:hover {
-    background-color: rgba(102, 51, 153, 0.6) !important;
+    background-color: var(--light-green) !important;
   }
 `;
 
 export const MainAreaStyle = styled.div`
   position: absolute;
   color: black;
-  background-color: #2f2f3f;
+  background: var(--gredient);
   left: 0;
   right: 0;
   top: 0;
@@ -34,7 +52,9 @@ export const MainAreaStyle = styled.div`
   grid-template-rows: auto 1fr auto;
 `;
 
-export const SelectPlanButtonStyle = styled.div`
+export const MenuButtonStyle = styled.div`
+  position: absolute;
+  margin: 1rem;
   width: fit-content;
   font-size: 1.2rem;
   border-radius: 4px;
@@ -45,18 +65,19 @@ export const SelectPlanButtonStyle = styled.div`
   z-index: 1;
   color: white;
   margin: 5px;
+  border: 1px solid var(--gold);
 `;
 
 export const ButtonsStyle = styled.div`
   display: flex;
-  max-width: 400px;
+  max-width: 300px;
   justify-content: space-evenly;
   width: 100%;
   margin: 1rem auto;
 
   button {
-    color: var(--secondary);
-    border: 2px solid var(--secondary);
+    color: var(--primary);
+    border: 2px solid var(--primary);
     padding: 5px 1rem;
     font-size: 1rem;
     border-radius: 5px;
@@ -64,26 +85,34 @@ export const ButtonsStyle = styled.div`
   }
 
   .btn-selected {
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: white;
   }
 `;
 
 export const ContentStyle = styled.div`
-  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .carousel {
+    width: 100vw;
+    max-height: 90vh;
+    overflow: hidden;
+  }
 `;
 
 export const HeaderStyle = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  background-color: var(--secondary);
-
+  background-color: var(--primary);
+  position: relative;
   .title {
-    /* color: var(--secondary); */
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.5rem;
+    color: gold;
+    opacity: 0.98;
+    text-shadow: 1px 1px 2px black;
+    /* color: rgba(255, 255, 255, 0.9); */
+    font-size: 1.8rem;
     font-weight: 500;
     width: 100%;
     text-align: center;
+    padding: 0.5rem 0;
   }
 `;

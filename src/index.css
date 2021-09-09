@@ -1,6 +1,17 @@
 :root {
-  --primary: #7791f0;
-  --secondary: rgba(102, 51, 153, 1);
+  --blue: #7791f0;
+  --purple: rgba(102, 51, 153, 1);
+  --light-green: rgba(46, 122, 123, 0.88);
+  --green: rgba(39, 103, 104, 0.88);
+  --gold: #ffc700;
+  --light-gold: #ffc800c4;
+  --primary: var(--green);
+  --secondary: var(--gold);
+  --gredient: linear-gradient(
+    315deg,
+    #fff,
+    rgba(70, 162, 163, 0.9391106784510679)
+  );
 }
 
 * {

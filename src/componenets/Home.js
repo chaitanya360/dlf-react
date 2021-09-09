@@ -51,7 +51,6 @@ function Home(props) {
   const BUTTONS = [
     { text: "ELEVATION", id: "elevation" },
     { text: "ISO", id: "iso" },
-    { text: "VIRTUAL", id: "virtual" },
   ];
 
   const [selectedBtnId, setSelectedBtnId] = useState("elevation");

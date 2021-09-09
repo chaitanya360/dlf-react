@@ -4,8 +4,9 @@ import {
   ContentStyle,
   HeaderStyle,
   MainAreaStyle,
-  SelectPlanButtonStyle,
+  MenuButtonStyle,
 } from "./components.style";
+import ImageCarousel from "./ImageCarousel";
 
 const MenuIcon = ({ color = "black" }) => (
   <svg width="16" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,39 +45,25 @@ const MenuIcon = ({ color = "black" }) => (
   </svg>
 );
 
-const SelectPlanButton = ({ setsidebarOpen, sidebarOpen }) => (
-  <SelectPlanButtonStyle
+const MenuButton = ({ setsidebarOpen, sidebarOpen }) => (
+  <MenuButtonStyle
     onClick={() => setsidebarOpen(true)}
     style={{ opacity: sidebarOpen ? 0 : 1 }}
   >
     <MenuIcon color="white" />
-  </SelectPlanButtonStyle>
+  </MenuButtonStyle>
 );
 
 const Content = ({ selectedPlan, selectedBtnId }) => (
   <ContentStyle>
-    <iframe
-      className="model"
-      height="100%"
-      width="100%"
-      id="6b0ec302-ba89-4dbf-99d5-6fcfe3d661b2"
-      src={selectedPlan.url[selectedBtnId]}
-      allowFullScreen
-      allow="xr-spatial-tracking; gyroscope; accelerometer"
-      scrolling="no"
-      frameBorder="none"
-      title={selectedPlan.text}
-    ></iframe>
+    <ImageCarousel />
   </ContentStyle>
 );
 
 const Header = ({ setsidebarOpen, sidebarOpen, selectedPlan }) => (
   <HeaderStyle>
-    <SelectPlanButton
-      setsidebarOpen={setsidebarOpen}
-      sidebarOpen={sidebarOpen}
-    />
-    <div className="title">{selectedPlan.text}</div>
+    <MenuButton setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
+    <div className="title">Garden City Phase 2 C</div>
   </HeaderStyle>
 );
 
