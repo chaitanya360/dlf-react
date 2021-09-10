@@ -39,4 +39,29 @@ export const PlanCardStyle = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 900px) {
+    width: 100vw;
+    border-radius: 5px;
+    flex-direction: column;
+
+    .details {
+      height: 100%;
+      width: 100%;
+      max-width: 90vw;
+      margin: auto;
+      padding-bottom: 1rem;
+      .title {
+        font-size: 1.3rem;
+        margin: 0.5rem;
+      }
+
+      .info {
+        grid-template-columns: 3fr 7fr;
+        font-size: 1.1rem;
+        padding: 8px 4px;
+        font-weight: 400;
+      }
+    }
+  }
 `;

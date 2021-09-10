@@ -49,14 +49,52 @@ export const MainAreaStyle = styled.div`
   top: 0;
   bottom: 0;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr;
+`;
+
+export const ButtonsStyle = styled.div`
+  display: grid;
+  width: 100%;
+  padding: 0.5rem 0;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  height: fit-content;
+  /* margin: 1rem auto; */
+
+  button {
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    opacity: 0.9;
+    padding: 3px 1rem;
+    font-size: 1rem;
+    margin: 0.2rem;
+    border-radius: 3px;
+    cursor: pointer;
+
+    :hover {
+      background-color: aliceblue;
+    }
+  }
+
+  .view-btn-container {
+    display: flex;
+    margin-left: 1rem;
+    justify-content: flex-start;
+    .btn-selected {
+      background-color: var(--primary);
+      color: white;
+      opacity: 1;
+    }
+  }
 `;
 
 export const MenuButtonStyle = styled.div`
-  position: absolute;
+  display: inline-block;
   margin: 1rem;
+  height: fit-content;
   width: fit-content;
   font-size: 1.2rem;
+  transform: translateX(5px);
   border-radius: 4px;
   padding: 0rem 0.5rem;
   background-color: var(--primary);
@@ -68,28 +106,6 @@ export const MenuButtonStyle = styled.div`
   border: 1px solid var(--gold);
 `;
 
-export const ButtonsStyle = styled.div`
-  display: flex;
-  max-width: 300px;
-  justify-content: space-evenly;
-  width: 100%;
-  margin: 1rem auto;
-
-  button {
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    padding: 5px 1rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .btn-selected {
-    background-color: var(--primary);
-    color: white;
-  }
-`;
-
 export const ContentStyle = styled.div`
   display: flex;
   justify-content: center;
@@ -97,27 +113,45 @@ export const ContentStyle = styled.div`
 
   .master-img {
     border-radius: 8px;
-    height: 85vh;
-    width: auto;
+    width: 90vw;
+    height: 75vh;
+    object-fit: contain;
   }
   .iso-img {
     max-height: 85vh;
     width: auto;
   }
+
+  @media screen and (max-width: 700px) {
+    .master-img {
+      border-radius: 8px;
+      height: 85vh;
+      object-fit: contain;
+      width: 100vw;
+    }
+  }
 `;
 
 export const HeaderStyle = styled.div`
-  background-color: var(--primary);
   position: relative;
   .title {
+    background-color: var(--primary);
     color: gold;
     opacity: 0.98;
     text-shadow: 1px 1px 2px black;
-    /* color: rgba(255, 255, 255, 0.9); */
     font-size: 1.5rem;
     font-weight: 500;
     width: 100%;
     text-align: center;
     padding: 0.5rem 0;
+  }
+
+  @media screen and (max-width: 700px) {
+    .title {
+      font-size: 1.2rem;
+      .sub-title {
+        display: block;
+      }
+    }
   }
 `;

@@ -10,52 +10,6 @@ import {
 } from "./components.style";
 import PlanCard from "./molecules/PlanCard";
 
-const MenuIcon = ({ color = "black" }) => (
-  <svg width="16" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g id="menu-icon">
-      <line
-        id="Line 1"
-        x1="1"
-        y1="1"
-        x2="15"
-        y2="1"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <line
-        id="Line 2"
-        x1="1"
-        y1="6"
-        x2="15"
-        y2="6"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <line
-        id="Line 3"
-        x1="1"
-        y1="11"
-        x2="15"
-        y2="11"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </g>
-  </svg>
-);
-
-const MenuButton = ({ setsidebarOpen, sidebarOpen }) => (
-  <MenuButtonStyle
-    onClick={() => setsidebarOpen(true)}
-    style={{ opacity: sidebarOpen ? 0 : 1 }}
-  >
-    <MenuIcon color="white" />
-  </MenuButtonStyle>
-);
-
 const Content = ({ plan, isIso }) => (
   <ContentStyle>
     {!isIso ? (
@@ -87,9 +41,9 @@ const Content = ({ plan, isIso }) => (
 
 const Header = ({ setsidebarOpen, sidebarOpen }) => (
   <HeaderStyle>
-    <MenuButton setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
     <div className="title">
-      Independent Floors at DLF Gardencity, Sector 91/92, Gurugram
+      Independent Floors at DLF Gardencity,
+      <span className="sub-title"> Sector 91/92, Gurugram</span>
     </div>
   </HeaderStyle>
 );
@@ -104,8 +58,9 @@ function MainArea({ setsidebarOpen, sidebarOpen }) {
   return (
     <MainAreaStyle>
       <Header setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
+
+      <Buttons setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
       <Content plan={plan} isIso={selectedBtnId == "iso"} />
-      <Buttons />
     </MainAreaStyle>
   );
 }
