@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { SelectionContext } from "../context/SelectionContext";
+import { PLAN_LIST } from "../utilities/data";
 import Buttons from "./Buttons";
 import {
   ContentStyle,
@@ -6,7 +8,7 @@ import {
   MainAreaStyle,
   MenuButtonStyle,
 } from "./components.style";
-import ImageCarousel from "./ImageCarousel";
+import PlanCard from "./molecules/PlanCard";
 
 const MenuIcon = ({ color = "black" }) => (
   <svg width="16" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,40 +56,54 @@ const MenuButton = ({ setsidebarOpen, sidebarOpen }) => (
   </MenuButtonStyle>
 );
 
-const Content = ({ selectedPlan, selectedBtnId }) => (
+const Content = ({ plan, isIso }) => (
   <ContentStyle>
-    <ImageCarousel />
+    {!isIso ? (
+      plan.id === "master" ? (
+        <img
+          src={`${process.env.PUBLIC_URL}/images/${plan.imageSrc}.jpg`}
+          className="master-img"
+        />
+      ) : (
+        <PlanCard plan={plan} />
+      )
+    ) : (
+      <iframe
+        class="model"
+        height="100%"
+        width="100%"
+        id="6b0ec302-ba89-4dbf-99d5-6fcfe3d661b2"
+        src={plan.isoSrc}
+        frameborder="0"
+        allowFullScreen
+        allow="xr-spatial-tracking; gyroscope; accelerometer"
+        scrolling="no"
+      ></iframe>
+    )}
   </ContentStyle>
 );
 
-const Header = ({ setsidebarOpen, sidebarOpen, selectedPlan }) => (
+const Header = ({ setsidebarOpen, sidebarOpen }) => (
   <HeaderStyle>
     <MenuButton setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
-    <div className="title">Garden City Phase 2 C</div>
+    <div className="title">
+      Independent Floors at DLF Gardencity, Sector 91/92, Gurugram
+    </div>
   </HeaderStyle>
 );
 
-function MainArea({
-  setsidebarOpen,
-  sidebarOpen,
-  selectedPlan,
-  BUTTONS,
-  selectedBtnId,
-  setSelectedBtnId,
-}) {
+function MainArea({ setsidebarOpen, sidebarOpen }) {
+  const { selectedPlanId, selectedBtnId, setSelectedBtnId } =
+    useContext(SelectionContext);
+  const plan = PLAN_LIST.find((plan) => plan.id == selectedPlanId);
+  useEffect(() => {
+    if (selectedPlanId === "master") setSelectedBtnId("elevation");
+  }, [selectedPlanId]);
   return (
     <MainAreaStyle>
-      <Header
-        selectedPlan={selectedPlan}
-        setsidebarOpen={setsidebarOpen}
-        sidebarOpen={sidebarOpen}
-      />
-      <Content selectedPlan={selectedPlan} selectedBtnId={selectedBtnId} />
-      <Buttons
-        BUTTONS={BUTTONS}
-        selectedBtnId={selectedBtnId}
-        setSelectedBtnId={setSelectedBtnId}
-      />
+      <Header setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
+      <Content plan={plan} isIso={selectedBtnId == "iso"} />
+      <Buttons />
     </MainAreaStyle>
   );
 }

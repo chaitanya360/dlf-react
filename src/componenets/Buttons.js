@@ -1,27 +1,34 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { SelectionContext } from "../context/SelectionContext";
+import { BUTTONS } from "../utilities/data";
 import { ButtonsStyle } from "./components.style";
 
-function Buttons({ BUTTONS, selectedBtnId, setSelectedBtnId }) {
-  const Button = ({ text, selected, id }) => (
-    <button
-      id={id}
-      onClick={() => setSelectedBtnId(id)}
-      className={selected ? "btn-selected" : "btn"}
-    >
-      {text}
-    </button>
-  );
+const Button = ({ text, selected, setSelectedBtnId, id }) => (
+  <button
+    id={id}
+    onClick={() => setSelectedBtnId(id)}
+    className={selected ? "btn-selected" : "btn"}
+  >
+    {text}
+  </button>
+);
+
+function Buttons() {
+  const { setSelectedBtnId, selectedBtnId, selectedPlanId } =
+    useContext(SelectionContext);
 
   return (
     <ButtonsStyle>
-      {BUTTONS.map((btn) => (
-        <Button
-          text={btn.text}
-          key={btn.id}
-          id={btn.id}
-          selected={selectedBtnId === btn.id}
-        />
-      ))}
+      {selectedPlanId !== "master" &&
+        BUTTONS.map((btn) => (
+          <Button
+            text={btn.text}
+            key={btn.id}
+            id={btn.id}
+            selected={selectedBtnId === btn.id}
+            setSelectedBtnId={setSelectedBtnId}
+          />
+        ))}
     </ButtonsStyle>
   );
 }

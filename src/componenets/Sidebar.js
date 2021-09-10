@@ -79,7 +79,7 @@ function Sidebar({ list, selectedItemId, setSelectedItemId, open, setOpen }) {
         </span>
         {list.map((item) => (
           <ListItem
-            text={item.text}
+            text={item.title}
             id={item.id}
             key={item.id}
             selected={item.id === selectedItemId}

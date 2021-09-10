@@ -94,10 +94,11 @@ export const ContentStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  .carousel {
-    width: 100vw;
-    max-height: 90vh;
-    overflow: hidden;
+
+  .master-img {
+    border-radius: 8px;
+    height: 85vh;
+    width: auto;
   }
 `;
 
@@ -109,7 +110,7 @@ export const HeaderStyle = styled.div`
     opacity: 0.98;
     text-shadow: 1px 1px 2px black;
     /* color: rgba(255, 255, 255, 0.9); */
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 500;
     width: 100%;
     text-align: center;
