@@ -28,8 +28,7 @@ export const PLAN_LIST = [
     size: "380 Sq ft.",
     street_plot: [["B12", "5"]],
     imageSrc: ["1", "2"],
-    isoSrc:
-      "https://www.vectary.com/viewer/v1/?model=a4e2a8d8-b8fe-458f-b3f6-997e8f7c9ad4&env=studio3",
+    isoSrc: `${process.env.PUBLIC_URL}/images/iso/380.png`,
   },
 
   {
@@ -38,8 +37,7 @@ export const PLAN_LIST = [
     size: "392 Sq ft.",
     street_plot: [["G17", "19"]],
     imageSrc: ["1", "2", "3", "4"],
-    isoSrc:
-      "https://www.vectary.com/viewer/v1/?model=a4e2a8d8-b8fe-458f-b3f6-997e8f7c9ad4&env=studio3",
+    isoSrc: `${process.env.PUBLIC_URL}/images/iso/392.png`,
   },
   {
     id: "d",

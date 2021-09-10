@@ -67,6 +67,8 @@ const Content = ({ plan, isIso }) => (
       ) : (
         <PlanCard plan={plan} />
       )
+    ) : plan.id === "b" || plan.id === "c" ? (
+      <img src={plan.isoSrc} className="iso-img" />
     ) : (
       <iframe
         class="model"

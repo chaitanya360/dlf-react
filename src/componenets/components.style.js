@@ -100,6 +100,10 @@ export const ContentStyle = styled.div`
     height: 85vh;
     width: auto;
   }
+  .iso-img {
+    max-height: 85vh;
+    width: auto;
+  }
 `;
 
 export const HeaderStyle = styled.div`
