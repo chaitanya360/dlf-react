@@ -5,6 +5,7 @@ import "./component.css";
 import MainArea from "./MainArea";
 import { BUTTONS, PLAN_LIST } from "../utilities/data";
 import { SelectionContext } from "../context/SelectionContext";
+import ImageCarousel from "./atoms/ImageCarousel";
 
 function Home(props) {
   const [selectedBtnId, setSelectedBtnId] = useState("elevation");

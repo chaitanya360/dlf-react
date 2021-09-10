@@ -1,21 +1,19 @@
 import styled from "styled-components";
 
 export const PlanCardStyle = styled.div`
-  /* background-color: var(--light-green); */
   background-color: rgba(33, 102, 102, 0.93);
   color: white;
-  /* display: grid; */
-  /* grid-template-columns: 5fr 3fr; */
   display: flex;
   width: fit-content;
   min-width: 60vw;
-  /* padding: 1rem; */
   border-radius: 10px;
   overflow: hidden;
   margin: 1rem auto;
+  justify-content: flex-start;
+  align-items: center;
 
   .details {
-    /* background-color: green; */
+    align-self: flex-start;
     .title {
       font-size: 1.5rem;
       margin: 1rem;

@@ -30,9 +30,10 @@ export const NextButtonStyle = styled(PrevButtonStyle)`
 `;
 
 export const ImageCarouselStyle = styled.div`
-  height: 80vh;
+  width: 35vw;
+  .carousel-img-wrapper {
+  }
   .carousel-img {
-    height: 100%;
-    width: auto;
+    object-fit: contain;
   }
 `;
