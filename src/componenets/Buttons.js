@@ -59,7 +59,7 @@ const MenuButton = ({ setsidebarOpen, sidebarOpen }) => (
   </MenuButtonStyle>
 );
 
-function Buttons({ setsidebarOpen, sidebarOpen }) {
+function Buttons({ setsidebarOpen, sidebarOpen, setShowDisclaimer }) {
   const { setSelectedBtnId, selectedBtnId, selectedPlanId } =
     useContext(SelectionContext);
 
@@ -77,6 +77,9 @@ function Buttons({ setsidebarOpen, sidebarOpen }) {
               setSelectedBtnId={setSelectedBtnId}
             />
           ))}
+      </div>
+      <div className="disclaimer-icon" onClick={() => setShowDisclaimer(true)}>
+        !
       </div>
     </ButtonsStyle>
   );

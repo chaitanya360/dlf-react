@@ -6,6 +6,7 @@ export const PlanCardStyle = styled.div`
   display: flex;
   width: fit-content;
   min-width: 60vw;
+  min-height: 70vh;
   border-radius: 10px;
   overflow: hidden;
   margin: 1rem auto;

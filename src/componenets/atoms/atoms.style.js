@@ -41,3 +41,62 @@ export const ImageCarouselStyle = styled.div`
     width: 100vw;
   }
 `;
+
+export const DisclaimerStyle = styled.div`
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .close-btn-container {
+    background-color: #2f362f;
+    width: 100%;
+    height: fit-content;
+    transform: translateY(5px) scaleY(0.8);
+    display: flex;
+    justify-content: flex-end;
+
+    .close-btn {
+      background-color: rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px 7px;
+      margin: 2px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #d37f57;
+      cursor: pointer;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .body {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 90vw;
+    max-width: 550px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 900px) {
+    img {
+      width: 95vw;
+    }
+  }
+`;

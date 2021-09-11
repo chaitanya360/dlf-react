@@ -1,6 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { SelectionContext } from "../context/SelectionContext";
 import { PLAN_LIST } from "../utilities/data";
+import Disclaimer from "./atoms/Disclaimer";
 import Buttons from "./Buttons";
 import {
   ContentStyle,
@@ -49,6 +50,7 @@ const Header = ({ setsidebarOpen, sidebarOpen }) => (
 );
 
 function MainArea({ setsidebarOpen, sidebarOpen }) {
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
   const { selectedPlanId, selectedBtnId, setSelectedBtnId } =
     useContext(SelectionContext);
   const plan = PLAN_LIST.find((plan) => plan.id == selectedPlanId);
@@ -58,9 +60,13 @@ function MainArea({ setsidebarOpen, sidebarOpen }) {
   return (
     <MainAreaStyle>
       <Header setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
-
-      <Buttons setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
+      <Buttons
+        setShowDisclaimer={setShowDisclaimer}
+        setsidebarOpen={setsidebarOpen}
+        sidebarOpen={sidebarOpen}
+      />
       <Content plan={plan} isIso={selectedBtnId == "iso"} />
+      {showDisclaimer && <Disclaimer setShow={setShowDisclaimer} />}
     </MainAreaStyle>
   );
 }

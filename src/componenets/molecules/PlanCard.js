@@ -18,7 +18,7 @@ function PlanCard({ plan }) {
           <span className="value">{plan.size}</span>
         </div>
         {plan.street_plot.map((info) => (
-          <div className="info">
+          <div className="info" key={info[0]}>
             Street {info[0]}
             <span className="value">Plot {info[1]}</span>
           </div>

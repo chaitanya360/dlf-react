@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Disclaimer from "./componenets/atoms/Disclaimer";
 import Home from "./componenets/Home";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";

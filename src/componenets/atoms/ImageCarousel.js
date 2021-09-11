@@ -35,13 +35,14 @@ function ImageCarousel({ images }) {
           )}
         >
           {images.map((src) => (
-            <div className="carousel-img-wrapper">
+            <div className="carousel-img-wrapper" key={src}>
               <img
                 // onLoad={() => setLoading(false)}
                 // style={{ opacity: !loading ? "1" : "0" }}
                 height="auto"
                 width="100%"
                 src={src}
+                alt={src}
                 className="carousel-img"
               />
             </div>

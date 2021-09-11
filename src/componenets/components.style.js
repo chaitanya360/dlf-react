@@ -57,7 +57,7 @@ export const ButtonsStyle = styled.div`
   width: 100%;
   padding: 0.5rem 0;
   align-items: center;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   height: fit-content;
   /* margin: 1rem auto; */
 
@@ -86,6 +86,26 @@ export const ButtonsStyle = styled.div`
       opacity: 1;
     }
   }
+  .disclaimer-icon {
+    box-sizing: content-box;
+    background-color: var(--primary);
+    height: 27px;
+    width: 27px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: white;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    :hover {
+      border: 2px solid var(--secondary);
+    }
+  }
 `;
 
 export const MenuButtonStyle = styled.div`
@@ -101,9 +121,12 @@ export const MenuButtonStyle = styled.div`
   cursor: pointer;
   transition: linear 200ms opacity;
   z-index: 1;
-  color: white;
+  color: gold;
   margin: 5px;
-  border: 1px solid var(--gold);
+  border: 1px solid transparent;
+  :hover {
+    border: 1px solid var(--gold);
+  }
 `;
 
 export const ContentStyle = styled.div`
@@ -122,12 +145,17 @@ export const ContentStyle = styled.div`
     width: auto;
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 900px) {
     .master-img {
       border-radius: 8px;
       height: 85vh;
       object-fit: contain;
       width: 100vw;
+    }
+    .iso-img {
+      width: 90vw;
+      height: auto;
+      object-fit: contain;
     }
   }
 `;
