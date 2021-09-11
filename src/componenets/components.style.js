@@ -50,6 +50,11 @@ export const MainAreaStyle = styled.div`
   bottom: 0;
   display: grid;
   grid-template-rows: auto auto 1fr;
+
+  @media screen and (max-width: 900px) {
+    height: fit-content;
+    min-height: 100vh;
+  }
 `;
 
 export const ButtonsStyle = styled.div`
