@@ -67,7 +67,7 @@ function Buttons({ setsidebarOpen, sidebarOpen, setShowDisclaimer }) {
     <ButtonsStyle>
       <MenuButton setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
       <div className="view-btn-container">
-        {selectedPlanId !== "master" &&
+        {!(selectedPlanId === "master" || selectedPlanId === "virtual-tour") &&
           BUTTONS.map((btn) => (
             <Button
               text={btn.text}

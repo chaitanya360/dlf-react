@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { SelectionContext } from "../context/SelectionContext";
 import { PLAN_LIST } from "../utilities/data";
 import Disclaimer from "./atoms/Disclaimer";
+import Iframe from "./atoms/Iframe";
+import VirtualTour from "./atoms/VirtualTour";
 import Buttons from "./Buttons";
 import {
   ContentStyle,
@@ -11,32 +13,27 @@ import {
 } from "./components.style";
 import PlanCard from "./molecules/PlanCard";
 
-const Content = ({ plan, isIso }) => (
-  <ContentStyle>
-    {!isIso ? (
-      plan.id === "master" ? (
+const Content = ({ plan, selectedBtnId }) => {
+  switch (plan.id) {
+    case "master":
+      return (
         <img
           src={`${process.env.PUBLIC_URL}/images/${plan.imageSrc}.jpg`}
           className="master-img"
         />
-      ) : (
-        <PlanCard plan={plan} />
-      )
-    ) : (
-      <iframe
-        class="model"
-        height="100%"
-        width="100%"
-        id="6b0ec302-ba89-4dbf-99d5-6fcfe3d661b2"
-        src={plan.isoSrc}
-        frameborder="0"
-        allowFullScreen
-        allow="xr-spatial-tracking; gyroscope; accelerometer"
-        scrolling="no"
-      ></iframe>
-    )}
-  </ContentStyle>
-);
+      );
+    case "virtual-tour":
+      return <VirtualTour src={plan.src} />;
+
+    default:
+      switch (selectedBtnId) {
+        case "iso":
+          return <Iframe src={plan.isoSrc} />;
+        case "elevation":
+          return <PlanCard plan={plan} />;
+      }
+  }
+};
 
 const Header = ({ setsidebarOpen, sidebarOpen }) => (
   <HeaderStyle>
@@ -52,9 +49,7 @@ function MainArea({ setsidebarOpen, sidebarOpen }) {
   const { selectedPlanId, selectedBtnId, setSelectedBtnId } =
     useContext(SelectionContext);
   const plan = PLAN_LIST.find((plan) => plan.id == selectedPlanId);
-  useEffect(() => {
-    if (selectedPlanId === "master") setSelectedBtnId("elevation");
-  }, [selectedPlanId]);
+
   return (
     <MainAreaStyle>
       <Header setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
@@ -63,7 +58,9 @@ function MainArea({ setsidebarOpen, sidebarOpen }) {
         setsidebarOpen={setsidebarOpen}
         sidebarOpen={sidebarOpen}
       />
-      <Content plan={plan} isIso={selectedBtnId == "iso"} />
+      <ContentStyle>
+        <Content plan={plan} selectedBtnId={selectedBtnId} />
+      </ContentStyle>
       {showDisclaimer && <Disclaimer setShow={setShowDisclaimer} />}
     </MainAreaStyle>
   );

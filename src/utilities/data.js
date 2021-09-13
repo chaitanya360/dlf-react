@@ -7,7 +7,7 @@ export const PLAN_LIST = [
   {
     id: "a",
     title: "Plan A",
-    size: "411 Sq ft.",
+    size: "411 sq.yd  (343.65 sq.mt)",
     street_plot: [
       ["NCA", "12"],
       ["NCA", "14"],
@@ -25,7 +25,7 @@ export const PLAN_LIST = [
   {
     id: "b",
     title: "Plan B",
-    size: "380 Sq ft.",
+    size: "380 sq.yd  (317.72 sq.mt)",
     street_plot: [["B12", "5"]],
     imageSrc: ["1", "2"],
     isoSrc:
@@ -35,7 +35,7 @@ export const PLAN_LIST = [
   {
     id: "c",
     title: "Plan C",
-    size: "392 Sq ft.",
+    size: "392 sq.yd  (327.76 sq.mt)",
     street_plot: [["G17", "19"]],
     imageSrc: ["1", "2", "3", "4"],
     isoSrc:
@@ -44,7 +44,7 @@ export const PLAN_LIST = [
   {
     id: "d",
     title: "Plan D",
-    size: "418 Sq ft.",
+    size: "419 sq.yd  (350.34 sq.mt)",
     street_plot: [["G16", "21"]],
     imageSrc: ["1", "2"],
     isoSrc:
@@ -53,7 +53,7 @@ export const PLAN_LIST = [
   {
     id: "e",
     title: "Plan E",
-    size: "323 Sq ft.",
+    size: "323 sq.yd  (270.07 sq.mt)",
     street_plot: [["G8", "8"]],
     imageSrc: ["1", "2"],
     isoSrc:
@@ -62,11 +62,16 @@ export const PLAN_LIST = [
   {
     id: "f",
     title: "Plan F",
-    size: "503 Sq ft.",
+    size: "503 sq.yd  (420 sq.mt)",
     street_plot: [["SA", "IG"]],
     imageSrc: ["1"],
     isoSrc:
       "https://www.vectary.com/viewer/v1/?model=86399949-a7b2-46e3-bd7b-e565278d8519&env=studio3",
+  },
+  {
+    id: "virtual-tour",
+    title: "Virtual Tour",
+    src: "https://btvrprojects.s3.ap-south-1.amazonaws.com/Dlf_tour-gencity/index.htm",
   },
 ];
 
