@@ -45,7 +45,7 @@ const Header = ({ setsidebarOpen, sidebarOpen }) => (
 );
 
 function MainArea({ setsidebarOpen, sidebarOpen }) {
-  const [showDisclaimer, setShowDisclaimer] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
   const { selectedPlanId, selectedBtnId, setSelectedBtnId } =
     useContext(SelectionContext);
   const plan = PLAN_LIST.find((plan) => plan.id == selectedPlanId);
