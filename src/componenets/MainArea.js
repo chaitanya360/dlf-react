@@ -5,12 +5,7 @@ import Disclaimer from "./atoms/Disclaimer";
 import Iframe from "./atoms/Iframe";
 import VirtualTour from "./atoms/VirtualTour";
 import Buttons from "./Buttons";
-import {
-  ContentStyle,
-  HeaderStyle,
-  MainAreaStyle,
-  MenuButtonStyle,
-} from "./components.style";
+import { ContentStyle, HeaderStyle, MainAreaStyle } from "./components.style";
 import PlanCard from "./molecules/PlanCard";
 
 const Content = ({ plan, selectedBtnId }) => {

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const PlanCardStyle = styled.div`
-  background-color: rgba(33, 102, 102, 0.93);
+  /* background-color: rgba(33, 102, 102, 0.93); */
+  background-color: var(--primary);
   color: white;
   display: flex;
   width: fit-content;

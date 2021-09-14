@@ -19,7 +19,7 @@ const sidebarStyle = {
     transition: "transform .3s ease-out",
     WebkitTransition: "-webkit-transform .3s ease-out",
     willChange: "transform",
-    backgroundColor: "var(--primary)",
+    backgroundColor: "var(--dark-grey)",
     padding: "1rem 0",
     overflowY: "auto",
     minWidth: "150px",

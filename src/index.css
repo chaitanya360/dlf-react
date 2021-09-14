@@ -3,15 +3,16 @@
   --purple: rgba(102, 51, 153, 1);
   --light-green: rgba(46, 122, 123, 0.88);
   --green: rgba(39, 103, 104, 0.88);
+  --grey: rgb(131, 133, 133);
+  --grey-medium: #181818;
+  --dark: rgba(20, 25, 26, 0.753);
+  --dark-grey: rgb(100, 101, 101);
   --gold: #ffc700;
   --light-gold: #ffc800c4;
-  --primary: var(--green);
+  --primary: var(--dark);
+  --primary-dark: var(--grey-medium);
   --secondary: var(--gold);
-  --gredient: linear-gradient(
-    315deg,
-    #fff,
-    rgba(70, 162, 163, 0.9391106784510679)
-  );
+  --gredient: linear-gradient(315deg, #fff, var(--grey));
 }
 
 * {

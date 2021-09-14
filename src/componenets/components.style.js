@@ -36,7 +36,7 @@ export const MenuStyle = styled.div`
   }
 
   li:hover {
-    background-color: var(--light-green) !important;
+    background-color: var(--grey) !important;
   }
 `;
 
@@ -168,8 +168,8 @@ export const ContentStyle = styled.div`
 export const HeaderStyle = styled.div`
   position: relative;
   .title {
-    background-color: var(--primary);
-    color: gold;
+    background-color: var(--primary-dark);
+    color: rgba(255, 255, 255, 0.9);
     opacity: 0.98;
     text-shadow: 1px 1px 2px black;
     font-size: 1.5rem;
